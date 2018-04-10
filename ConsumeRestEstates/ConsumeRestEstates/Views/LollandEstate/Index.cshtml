@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Liste over Lollands boliger";
+}
+
+@model IEnumerable<ConsumeRestEstates.Integration.Estate>
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="/LollandEstate/Detail/@(item.Id)">@item.Id | @item.City | @item.Area</a></li>
+        }
+    </ul>
+}
